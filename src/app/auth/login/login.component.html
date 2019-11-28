@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-12 col-sm-10 col-md-8 col-lg-6 mx-auto my-5">
+    <mat-card>
+      <mat-card-content class='p-4'>
+        <h3>
+          Login to your {{ appName }} account
+        </h3>
+        <mat-form-field class="full-width my-1">
+          <input matInput type="email" placeholder="Email address">
+        </mat-form-field>
+        <mat-form-field class="full-width my-1">
+          <input matInput type="password" placeholder="Password">
+        </mat-form-field>
+        <button mat-button type='button' class='full-width'>Login</button>
+        <hr>
+        <button mat-button type='button' class='full-width' (click)='loginWithGoogle()'>Login with Google</button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

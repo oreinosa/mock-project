@@ -1,0 +1,14 @@
+@import '~@angular/material/theming';
+
+@mixin app-home-theme($theme){  
+  $primary: map-get($theme, primary);
+}
+
+// @import '../../core/navigation/navigation.component';
+@import '../../notifications/notification/notification.component.theme';
+
+@mixin my-components-theme($theme){
+  @include app-home-theme($theme);
+  @include app-notification-theme($theme);
+  // @include app-navigation-theme($theme);
+}

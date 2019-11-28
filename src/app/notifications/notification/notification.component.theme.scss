@@ -1,0 +1,27 @@
+@import '~@angular/material/theming';
+
+@mixin app-notification-theme($theme){
+  $background: map-get($theme, background);
+  $success : mat-palette($mat-green, 300);
+  $info : mat-palette($mat-blue, 300);
+  $danger : mat-palette($mat-red, 300);
+  $warning : mat-palette($mat-orange, 300);
+
+  div.notification-container{
+    .mat-card{
+      background: mat-color($background);
+      &.info{
+        background: mat-color($info);
+      }
+      &.success{
+        background: mat-color($success);
+      }
+      &.danger{
+        background: mat-color($danger);
+      }
+      &.warning{
+        background: mat-color($warning);
+      }
+    }
+  }
+}

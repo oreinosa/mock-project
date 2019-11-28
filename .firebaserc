@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "my-budget-98e41": {
+      "hosting": {
+        "my-budget": [
+          "my-budget-98e41"
+        ]
+      }
+    }
+  }
+}
