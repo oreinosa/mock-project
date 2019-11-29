@@ -1,9 +1,9 @@
 {
   "targets": {
-    "my-budget-98e41": {
+    "my-bakery-98e41": {
       "hosting": {
-        "my-budget": [
-          "my-budget-98e41"
+        "my-bakery": [
+          "my-bakery-98e41"
         ]
       }
     }

@@ -1,6 +1,6 @@
 {
-  "name": "my-budget",
-  "short_name": "my-budget",
+  "name": "my-bakery",
+  "short_name": "my-bakery",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

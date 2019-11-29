@@ -1,8 +1,8 @@
 {
   "hosting": [
     {
-      "target": "my-budget",
-      "public": "dist/my-budget",
+      "target": "my-bakery",
+      "public": "dist/my-bakery",
       "ignore": [
         "firebase.json",
         "**/.*",

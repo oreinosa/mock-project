@@ -7,10 +7,10 @@ export const environment = {
   appName: 'Mock Project',
   firebase: {
     apiKey: "AIzaSyAHP31UYwXpGe56MRDfpQRv7EGiyN3Uk6s",
-    authDomain: "my-budget-98e41.firebaseapp.com",
-    databaseURL: "https://my-budget-98e41.firebaseio.com",
-    projectId: "my-budget-98e41",
-    storageBucket: "my-budget-98e41.appspot.com",
+    authDomain: "my-bakery-98e41.firebaseapp.com",
+    databaseURL: "https://my-bakery-98e41.firebaseio.com",
+    projectId: "my-bakery-98e41",
+    storageBucket: "my-bakery-98e41.appspot.com",
     messagingSenderId: "223518347051",
     appId: "1:223518347051:web:4637604437700110fdbf6e"
   }
