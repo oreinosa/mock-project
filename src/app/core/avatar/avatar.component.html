@@ -1,0 +1,11 @@
+<div class="avatar-container text-center">
+  <ng-container *ngIf='user;else loadingUser'>
+    <h6>Hello, {{ user?.name }}!</h6>
+    <img [src]="user?.photoURL" [alt]="user?.name" class="img-fluid my-2">
+    <h6>{{ user?.email }}</h6>
+    <h6>{{ user?.role }}</h6>
+  </ng-container>
+  <ng-template #loadingUser>
+    <mat-spinner class="mx-auto"></mat-spinner>
+  </ng-template>
+</div>

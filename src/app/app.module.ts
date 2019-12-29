@@ -13,6 +13,7 @@ import { environment } from '../environments/environment';
 import { CoreModule } from './core/core.module';
 import { AuthModule } from './auth/auth.module';
 import { NotificationsModule } from './notifications/notifications.module';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { NotificationsModule } from './notifications/notifications.module';
     CoreModule,
     AuthModule,
     NotificationsModule,
+    AdminModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,

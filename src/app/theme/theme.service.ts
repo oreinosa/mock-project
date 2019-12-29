@@ -10,6 +10,10 @@ export class ThemeService {
   private active: Theme = light;
   private availableThemes: Theme[] = [light, dark];
   constructor(private overlayContainer: OverlayContainer) {
+    this.initTheme();
+  }
+
+  initTheme() {
     this.setActiveTheme(this.active);
   }
 
@@ -22,8 +26,8 @@ export class ThemeService {
   }
 
   setActiveTheme(theme: Theme): void {
-    document.querySelector("#container").className = theme.name;
-    
+    document.body.className = theme.name;
+
     let classList = this.overlayContainer.getContainerElement().classList;
     if (classList.contains(this.active.name)) {
       classList.replace(this.active.name, theme.name);

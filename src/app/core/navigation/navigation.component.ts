@@ -16,8 +16,8 @@ import { LogoutComponent } from 'src/app/auth/logout/logout.component';
 })
 export class NavigationComponent {
   appName = environment.appName;
-  user: User;
-  links: Link[] = [];
+  user$: Observable<User>;
+  // user: User;
   actions: Link[] = [];
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -30,13 +30,12 @@ export class NavigationComponent {
     private authService: AuthService,
     private dialog: MatDialog
   ) {
-    this.authService.links
-      .subscribe(links => this.links = links);
 
     this.authService.actions
       .subscribe(actions => this.actions = actions);
 
-    this.authService.user$.subscribe(user => this.user = user);
+    this.user$ = this.authService.user$;
+    // this.authService.user$.subscribe(user => this.user = user);
   }
 
   logout() {

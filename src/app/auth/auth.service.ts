@@ -14,21 +14,21 @@ import { NotificationsService } from '../notifications/notifications.service';
 })
 export class AuthService {
   private collectionName = 'users';
-  links: BehaviorSubject<Link[]>;
   actions: BehaviorSubject<Link[]>;
   user$: Observable<User>;
   private user: User;
-  private initLinks: Link[] = [
+
+  private agentActions: Link[] = [
+    // { label: "Profile", route: "profile", icon: "person" }
   ];
 
-  private initActions: Link[] = [
-    { label: "Login", route: "login", icon: "person" },
-    { label: "Signup", route: "signup", icon: "person_add" }
-  ];
-
-  private userActions: Link[] = [
-    { label: "Profile", route: "profile", icon: "person" }
-  ];
+  private managerActions: Link[] = [
+    {
+      label: "Admin", route: "admin", icon: "build", children: [
+        { label: "Users", route: "users", icon: "people" }
+      ]
+    }
+  ]
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -36,8 +36,7 @@ export class AuthService {
     private router: Router,
     private notifications: NotificationsService
   ) {
-    this.links = new BehaviorSubject(this.initLinks);
-    this.actions = new BehaviorSubject(this.initActions);
+    this.actions = new BehaviorSubject([]);
 
     this.user$ = this.afAuth.authState
       .pipe(
@@ -52,19 +51,17 @@ export class AuthService {
           this.user = user;
           const role = user ? user.role : "";
           switch (role) {
-            case "Customer":
-              this.setActions(this.userActions);
+            case "Manager":
+              this.setActions(this.managerActions);
+              break;
+            case "Agent":
+              this.setActions(this.agentActions);
               break;
             default:
-              this.setActions(this.initActions);
-              this.setLinks(this.initLinks);
+              this.setActions([]);
           }
         })
       )
-  }
-
-  private setLinks(links: Link[]) {
-    this.links.next(links);
   }
 
   private setActions(actions: Link[]) {
@@ -97,17 +94,18 @@ export class AuthService {
   }
 
   private updateUserData(credential: auth.UserCredential) {
-    const fbUser = credential.user;
+    const { uid: id, displayName: name, email, photoURL } = credential.user;
     let user: User = {
-      id: fbUser.uid,
-      name: fbUser.displayName,
-      email: fbUser.email
+      id,
+      name,
+      email,
+      photoURL
     };
     if (credential.additionalUserInfo.isNewUser) {
       console.log('welcome new user');
       user.role = "Customer";
     };
-    let docReference = this.afs.collection(this.collectionName).doc<User>(fbUser.uid);
+    let docReference = this.afs.collection(this.collectionName).doc<User>(id);
     return docReference
       .set(user, { merge: true });
   }

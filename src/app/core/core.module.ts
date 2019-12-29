@@ -7,11 +7,12 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { ThemeModule } from '../theme/theme.module';
+import { AvatarComponent } from './avatar/avatar.component';
 
 
 
 @NgModule({
-  declarations: [HomeComponent, NavigationComponent],
+  declarations: [HomeComponent, NavigationComponent, AvatarComponent],
   imports: [
     SharedModule,
     ThemeModule,

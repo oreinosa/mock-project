@@ -4,15 +4,15 @@
 
 export const environment = {
   production: false,
-  appName: 'Mock Project',
+  appName: 'Mi Panaderia',
   firebase: {
-    apiKey: "AIzaSyAHP31UYwXpGe56MRDfpQRv7EGiyN3Uk6s",
-    authDomain: "my-bakery-98e41.firebaseapp.com",
-    databaseURL: "https://my-bakery-98e41.firebaseio.com",
-    projectId: "my-bakery-98e41",
-    storageBucket: "my-bakery-98e41.appspot.com",
-    messagingSenderId: "223518347051",
-    appId: "1:223518347051:web:4637604437700110fdbf6e"
+    apiKey: "AIzaSyCswi_e_KgG9yWQSaSETYrmQK0fnP0RHTw",
+    authDomain: "my-bakery-6c7d1.firebaseapp.com",
+    databaseURL: "https://my-bakery-6c7d1.firebaseio.com",
+    projectId: "my-bakery-6c7d1",
+    storageBucket: "my-bakery-6c7d1.appspot.com",
+    messagingSenderId: "859668876352",
+    appId: "1:859668876352:web:a69c858c0c321b509863a5"
   }
 };
 

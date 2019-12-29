@@ -1,0 +1,43 @@
+[debug] [2019-12-18T19:44:39.745Z] ----------------------------------------------------------------------
+[debug] [2019-12-18T19:44:39.747Z] Command:       /usr/bin/node /usr/bin/firebase serve --only functions
+[debug] [2019-12-18T19:44:39.747Z] CLI Version:   7.8.1
+[debug] [2019-12-18T19:44:39.747Z] Platform:      linux
+[debug] [2019-12-18T19:44:39.747Z] Node Version:  v12.13.1
+[debug] [2019-12-18T19:44:39.748Z] Time:          Wed Dec 18 2019 13:44:39 GMT-0600 (Central Standard Time)
+[debug] [2019-12-18T19:44:39.748Z] ----------------------------------------------------------------------
+[debug] [2019-12-18T19:44:39.748Z] 
+[debug] [2019-12-18T19:44:39.753Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-12-18T19:44:39.753Z] > authorizing via signed-in user
+[debug] [2019-12-18T19:44:39.753Z] [iam] checking project my-bakery-6c7d1 for permissions ["firebase.projects.get"]
+[debug] [2019-12-18T19:44:39.755Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/my-bakery-6c7d1:testIamPermissions  
+
+[debug] [2019-12-18T19:44:40.374Z] <<< HTTP RESPONSE 200
+[debug] [2019-12-18T19:44:40.378Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/my-bakery-6c7d1  
+ 
+[debug] [2019-12-18T19:44:41.041Z] <<< HTTP RESPONSE 200
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "12"
+[info] ✔  functions: Emulator started at http://localhost:5000
+[info] i  functions: Watching "/home/oreinosa/programming/my-bakery/functions" for Cloud Functions...
+[debug] [2019-12-18T19:44:41.463Z] [worker-~diagnostic~-3a371d5b-6c61-426c-807b-1ca13df2938e]: Assigning socketPath: /tmp/fire_emu_31722.sock
+[debug] [2019-12-18T19:44:41.465Z] [worker-~diagnostic~-3a371d5b-6c61-426c-807b-1ca13df2938e]: BUSY
+[debug] [2019-12-18T19:44:41.798Z] [runtime-status] [31722] Functions runtime initialized. {"cwd":"/home/oreinosa/programming/my-bakery/functions","node_version":"12.13.1"}
+[debug] [2019-12-18T19:44:41.799Z] [runtime-status] [31722] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2019-12-18T19:44:41.801Z] [runtime-status] [31722] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/oreinosa/programming/my-bakery/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-12-18T19:44:41.803Z] [runtime-status] [31722] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/oreinosa/programming/my-bakery/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-12-18T19:44:41.803Z] [runtime-status] [31722] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/oreinosa/programming/my-bakery/functions/node_modules/firebase-functions/lib/index.js"}
+[warn] ⚠  Error: Cannot find module '/home/oreinosa/programming/my-bakery/functions/lib/index.js'. Please verify that the package.json has a valid "main" entry
+    at tryPackage (internal/modules/cjs/loader.js:297:19)
+    at Function.Module._findPath (internal/modules/cjs/loader.js:528:18)
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:784:27)
+    at Function.Module._load (internal/modules/cjs/loader.js:690:27)
+    at Module.require (internal/modules/cjs/loader.js:852:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at /usr/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:723:33
+    at Generator.next (<anonymous>)
+    at fulfilled (/usr/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:4:58)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+[warn] ⚠  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2019-12-18T19:44:41.844Z] [worker-~diagnostic~-3a371d5b-6c61-426c-807b-1ca13df2938e]: exited
+[debug] [2019-12-18T19:44:41.844Z] [worker-~diagnostic~-3a371d5b-6c61-426c-807b-1ca13df2938e]: FINISHED
